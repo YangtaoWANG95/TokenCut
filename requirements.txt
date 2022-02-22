@@ -1,0 +1,12 @@
+scipy>=1.4.1
+matplotlib>=3.2.2
+opencv-python>=4.1.2
+tqdm>=4.41.0
+scikit-image
+catalyst
+scikit-learn
+pycocotools
+matplotlib
+pandas
+timm==0.3.2
+tensorboard
