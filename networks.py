@@ -23,15 +23,15 @@ def get_model(arch, patch_size, device):
         model = vits.__dict__[arch](num_classes=0)
     elif "vit" in arch:
         if arch == "vit_small" and patch_size == 16:
-            url = "/dino/dino_deitsmall16_pretrain/dino_deitsmall16_pretrain.pth"
+            url = "dino/dino_deitsmall16_pretrain/dino_deitsmall16_pretrain.pth"
         elif arch == "vit_small" and patch_size == 8:
-            url = "/dino/dino_deitsmall8_300ep_pretrain/dino_deitsmall8_300ep_pretrain.pth"  # model used for visualizations in our paper
+            url = "dino/dino_deitsmall8_300ep_pretrain/dino_deitsmall8_300ep_pretrain.pth" 
         elif arch == "vit_base" and patch_size == 16:
-            url = "/dino/dino_vitbase16_pretrain/dino_vitbase16_pretrain.pth"
+            url = "dino/dino_vitbase16_pretrain/dino_vitbase16_pretrain.pth"
         elif arch == "vit_base" and patch_size == 8:
-            url = "/dino/dino_vitbase8_pretrain/dino_vitbase8_pretrain.pth"
+            url = "dino/dino_vitbase8_pretrain/dino_vitbase8_pretrain.pth"
         elif arch == "resnet50":
-            url = "/dino/dino_resnet50_pretrain/dino_resnet50_pretrain.pth"
+            url = "dino/dino_resnet50_pretrain/dino_resnet50_pretrain.pth"
         model = vits.__dict__[arch](patch_size=patch_size, num_classes=0)
     else:
         raise NotImplementedError 
