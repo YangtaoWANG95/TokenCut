@@ -1,5 +1,5 @@
 # TokenCut
-Official pytorch implementation of **Tokencut**:
+Pytorch implementation of **Tokencut**:
 
 
 
@@ -12,7 +12,7 @@ Official pytorch implementation of **Tokencut**:
 <!--[[Project page](TODO)][[ArXiv](TODO)][[Video](TODO)][[Slides](TODO)]-->
 
 [[Project page](https://www.m-psi.fr/Papers/TokenCut2022/)]
-
+[[Paper](https://arxiv.org/pdf/2202.11539.pdf)]
 
 <p align="center">
   <img width="100%" alt="TokenCut teaser" src="examples/overview.png">
