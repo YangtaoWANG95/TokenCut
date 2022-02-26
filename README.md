@@ -13,6 +13,7 @@ Pytorch implementation of **Tokencut**:
 
 [[Project page](https://www.m-psi.fr/Papers/TokenCut2022/)]
 [[Paper](https://arxiv.org/pdf/2202.11539.pdf)]
+[[Colab demo](https://colab.research.google.com/github/YangtaoWANG95/TokenCut/blob/main/inference_demo.ipynb)]
 
 <p align="center">
   <img width="100%" alt="TokenCut teaser" src="examples/overview.png">
