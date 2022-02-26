@@ -46,6 +46,9 @@ If our project is helpful for your research, please consider citing :
 
 ## 1. Updates
 
+***02/26/2022***
+A simple TokenCut Colab Demo is available. 
+
 ***02/21/2022***
 Initial commit: Code of TokenCut is released, including evaluation of unsupervised object discovery, unsupervised saliency object detection, weakly supervised object locolization.
 
