@@ -129,8 +129,8 @@ if __name__ == "__main__":
 
     # -------------------------------------------------------------------------------------------------------
     # Model
-    #device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-    device = torch.device('cuda') 
+    device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
+    #device = torch.device('cuda') 
     model = get_model(args.arch, args.patch_size, device)
 
     # -------------------------------------------------------------------------------------------------------
@@ -192,8 +192,8 @@ if __name__ == "__main__":
         paded[:, : img.shape[1], : img.shape[2]] = img
         img = paded
 
-        # Move to gpu
-        img = img.cuda(non_blocking=True)
+        # # Move to gpu
+        # img = img.cuda(non_blocking=True)
         # Size for transformers
         w_featmap = img.shape[-2] // args.patch_size
         h_featmap = img.shape[-1] // args.patch_size
