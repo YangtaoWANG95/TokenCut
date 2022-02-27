@@ -14,6 +14,7 @@ Pytorch implementation of **Tokencut**:
 [[Project page](https://www.m-psi.fr/Papers/TokenCut2022/)]
 [[Paper](https://arxiv.org/pdf/2202.11539.pdf)]
 [[Colab demo](https://colab.research.google.com/github/YangtaoWANG95/TokenCut/blob/master/inference_demo.ipynb)]
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/akhaliq/TokenCut)
 
 <p align="center">
   <img width="100%" alt="TokenCut teaser" src="examples/overview.png">
@@ -45,6 +46,10 @@ If our project is helpful for your research, please consider citing :
 * [5. Acknowledgement](#5-acknowledgement)
 
 ## 1. Updates
+
+
+***02/26/2022***
+Integrated into [Huggingface Spaces 🤗](https://huggingface.co/spaces) using [Gradio](https://github.com/gradio-app/gradio). Try out the Web Demo: [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/akhaliq/TokenCut)
 
 ***02/26/2022***
 A simple TokenCut Colab Demo is available. 
