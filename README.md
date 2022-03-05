@@ -1,15 +1,11 @@
-# TokenCut
+# (CVPR 2022) TokenCut
 Pytorch implementation of **Tokencut**:
 
 
-
-<!-- **Self-supervised Transformers for Unsupervised Object Discovery using Normalized Cut**, CVPR 2022 [[arXiv](TODO)] -->
 **Self-supervised Transformers for Unsupervised Object Discovery using Normalized Cut**
 
-*Yangtao Wang, [Xi Shen](https://xishen0220.github.io/), [Shell Xu Hu](http://hushell.github.io/), [Yuan Yuan](https://yyuanad.github.io/), [James Crowley](http://crowley-coutaz.fr/jlc/jlc.html), [Dominique Vaufreydaz](https://research.vaufreydaz.org/)*
+*[Yangtao Wang](https://yangtaowang95.github.io), [Xi Shen](https://xishen0220.github.io/), [Shell Xu Hu](http://hushell.github.io/), [Yuan Yuan](https://yyuanad.github.io/), [James Crowley](http://crowley-coutaz.fr/jlc/jlc.html), [Dominique Vaufreydaz](https://research.vaufreydaz.org/)*
 
-
-<!--[[Project page](TODO)][[ArXiv](TODO)][[Video](TODO)][[Slides](TODO)]-->
 
 [[Project page](https://www.m-psi.fr/Papers/TokenCut2022/)]
 [[Paper](https://arxiv.org/pdf/2202.11539.pdf)]
@@ -22,10 +18,10 @@ Pytorch implementation of **Tokencut**:
 
 If our project is helpful for your research, please consider citing : 
 ``` 
-@article{wang2022tokencut,
+@inproceedings{wang2022tokencut,
           title={Self-supervised Transformers for Unsupervised Object Discovery using Normalized Cut},
           author={Wang, Yangtao and Shen, Xi and Hu, Shell Xu and Yuan, Yuan and Crowley, James and Vaufreydaz, Dominique},
-          journal={arXiv}
+          booktitle={Conference on Computer Vision and Pattern Recognition}
           year={2022}
         }
 ```
@@ -278,6 +274,6 @@ python eval.py --pretrained_weights /path/to/checkpoint --classifier_weights /pa
 
 ## 5. Acknowledgement
 
-TokenCut code is built on top of [LOST](https://github.com/valeoai/LOST), [DINO](https://github.com/facebookresearch/dino), [Segswap](https://github.com/XiSHEN0220/SegSwap), and [Bilateral_Sovlver](https://github.com/poolio/bilateral_solver). We would like to sincerely thanks for their great works. 
+TokenCut code is built on top of [LOST](https://github.com/valeoai/LOST), [DINO](https://github.com/facebookresearch/dino), [Segswap](https://github.com/XiSHEN0220/SegSwap), and [Bilateral_Sovlver](https://github.com/poolio/bilateral_solver). We would like to sincerely thanks those authors for their great works. 
 
 
