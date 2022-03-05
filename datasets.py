@@ -7,6 +7,7 @@ import skimage.io
 
 from PIL import Image
 from tqdm import tqdm
+from skimage.transform import resize
 from torchvision import transforms as pth_transforms
 
 # Image transformation applied to all images
@@ -18,7 +19,7 @@ transform = pth_transforms.Compose(
 )
 
 class ImageDataset:
-    def __init__(self, image_path):
+    def __init__(self, image_path, resize=False):
         
         self.image_path = image_path
         self.name = image_path.split("/")[-1]
@@ -29,14 +30,26 @@ class ImageDataset:
             img = img.convert("RGB")
 
         # Build a dataloader
-        img = transform(img)
+        if resize > 0:
+            transform_resize = pth_transforms.Compose(
+                [ 
+                    pth_transforms.ToTensor(),
+                    pth_transforms.Resize(resize),
+                    pth_transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225)),
+                ]
+            )
+            img = transform_resize(img)
+            self.img_size = list(img.shape[-1:-3:-1])
+        else:
+            img = transform(img)
+            self.img_size = list(img.shape[-1:-3:-1])
         self.dataloader = [[img, image_path]]
 
     def get_image_name(self, *args, **kwargs):
         return self.image_path.split("/")[-1].split(".")[0]
 
     def load_image(self, *args, **kwargs):
-        return skimage.io.imread(self.image_path)
+        return Image.open(self.image_path).convert("RGB").resize(self.img_size)
 
 class Dataset:
     def __init__(self, dataset_name, dataset_set, remove_hards):

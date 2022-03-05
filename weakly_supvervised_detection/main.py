@@ -93,7 +93,6 @@ def main(args):
     num_tasks = utils.get_world_size()
     global_rank = utils.get_rank()
 
-    ## TODO check whether sampler is ok? 
     if args.distributed:
         if args.data_aug and args.repeated_aug:
             sampler_train = RASampler(
@@ -123,7 +122,6 @@ def main(args):
     print(f"Data loaded with {len(dataset_train)} train and {len(dataset_val)} val imgs.")
 
     if args.evaluate:
-        #TODO check wether load model works
         checkpoint = torch.load(args.checkpoint, map_location='cpu')
         model_without_ddp.load_state_dict(checkpoint['model'])
         test_stats = validate_network(val_loader, model_without_ddp, device)

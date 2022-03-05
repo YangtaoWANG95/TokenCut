@@ -102,9 +102,9 @@ if __name__ == "__main__":
         default=100,
         help="Number of patches with the lowest degree considered."
     )
+    parser.add_argument("--resize", type=int, default=480, help="Resize input image to fix size")
     parser.add_argument("--tau", type=float, default=0.2, help="Tau for seperating the Graph.")
     parser.add_argument("--eps", type=float, default=1e-5, help="Eps for defining the Graph.")
-    parser.add_argument("--device", type=str, default='cuda', help="Device, default cuda.")
     parser.add_argument("--no-binary-graph", action="store_true", default=False, help="Generate a binary graph where edge of the Graph will binary. Or using similarity score as edge weight.")
 
     # Use dino-seg proposed method
@@ -123,7 +123,7 @@ if __name__ == "__main__":
 
     # If an image_path is given, apply the method only to the image
     if args.image_path is not None:
-        dataset = ImageDataset(args.image_path)
+        dataset = ImageDataset(args.image_path, args.resize)
     else:
         dataset = Dataset(args.dataset, args.set, args.no_hard)
 
@@ -193,7 +193,8 @@ if __name__ == "__main__":
         img = paded
 
         # # Move to gpu
-        # img = img.cuda(non_blocking=True)
+        if device == torch.device('cuda'):
+            img = img.cuda(non_blocking=True)
         # Size for transformers
         w_featmap = img.shape[-2] // args.patch_size
         h_featmap = img.shape[-1] // args.patch_size
@@ -270,12 +271,12 @@ if __name__ == "__main__":
             pred, objects, foreground, seed , bins, eigenvector= ncut(feats, [w_featmap, h_featmap], scales, init_image_size, args.tau, args.eps, im_name=im_name, no_binary_graph=args.no_binary_graph)
             
             if args.visualize == "pred" and args.no_evaluation :
-                image = dataset.load_image(im_name)
+                image = dataset.load_image(im_name, size_im)
                 visualize_predictions(image, pred, vis_folder, im_name)
             if args.visualize == "attn" and args.no_evaluation:
                 visualize_eigvec(eigenvector, vis_folder, im_name, [w_featmap, h_featmap], scales)
             if args.visualize == "all" and args.no_evaluation:
-                image = dataset.load_image(im_name)
+                image = dataset.load_image(im_name, size_im)
                 visualize_predictions(image, pred, vis_folder, im_name)
                 visualize_eigvec(eigenvector, vis_folder, im_name, [w_featmap, h_featmap], scales)
                         

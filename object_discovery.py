@@ -1,11 +1,8 @@
 import torch
 import torch.nn.functional as F
 import numpy as np
-#from scipy.linalg.decomp import eig
 from scipy.linalg import eigh
 from scipy import ndimage
-from sklearn.mixture import GaussianMixture
-from sklearn.cluster import KMeans
 
 def ncut(feats, dims, scales, init_image_size, tau = 0, eps=1e-5, im_name='', no_binary_graph=False):
     """
@@ -38,23 +35,11 @@ def ncut(feats, dims, scales, init_image_size, tau = 0, eps=1e-5, im_name='', no
     _, eigenvectors = eigh(D-A, D, subset_by_index=[1,2])
     eigenvec = np.copy(eigenvectors[:, 0])
 
-    # method1 avg
+    # Using average point to compute bipartition 
     second_smallest_vec = eigenvectors[:, 0]
     avg = np.sum(second_smallest_vec) / len(second_smallest_vec)
     bipartition = second_smallest_vec > avg
     
-    # method2 EM algo
-    #second_smallest_vec = eigenvectors[:, 0:1]
-    #bipartition = GMM(second_smallest_vec)
-
-    # method3 Kmeans 
-    #second_smallest_vec = eigenvectors[:, 0:1]
-    #bipartition = Kmeans_partition(second_smallest_vec)
-    
-    # method4 min energie
-    #second_smallest_vec = eigenvectors[:, 0]
-    #bipartition = min_energie(A, second_smallest_vec)
-
     seed = np.argmax(np.abs(second_smallest_vec))
 
     if bipartition[seed] != 1:
@@ -68,66 +53,6 @@ def ncut(feats, dims, scales, init_image_size, tau = 0, eps=1e-5, im_name='', no
     mask[cc[0],cc[1]] = 1
 
     return np.asarray(pred), objects, mask, seed, None, eigenvec.reshape(dims)
-
-def Kmeans_partition(eigvec):
-    kmeans = KMeans(n_clusters=2, random_state=0).fit(eigvec)
-    return kmeans.labels_
-
-def GMM(eigvec):
-    gmm = GaussianMixture(n_components=2, max_iter=300)
-    gmm.fit(eigvec)
-    partition = gmm.predict(eigvec)
-    return partition
-
-def min_energie(M, eigvec):
-    """
-    Method proposed in Normalized Cut, compute the best Ncut(A,B)
-    """
-    best_index = 0
-    sorted_index = np.argsort(eigvec)
-    length = len(eigvec)
-    eps = 1e-5
-
-    min_energie = float("inf")
-    for i in range(1,length):
-        A = np.zeros((length,1))
-        B = np.zeros((length,1))
-        A[sorted_index[:i]]=1
-        B[sorted_index[i:]]=1
-        assAV = np.sum(np.transpose(A) * M)
-        cutAB = np.sum(np.transpose(A) * M * B)
-        assBV = np.sum(np.transpose(B) * M)
-        cutBA = np.sum(np.transpose(B) * M * A)
-        if assAV == 0:
-            assAV = eps
-        if assBV == 0:
-            assBV = eps
-        energie = cutAB / assAV + cutBA / assBV
-        if min_energie > energie:
-            min_energie = energie
-            best_index = i
-    partition = eigvec > eigvec[sorted_index[best_index]]
-    return partition
-
-def patch_scoring(M, threshold=0.):
-    """
-    Patch scoring based on the inverse degree.
-    """
-    # Cloning important
-    A = np.copy(M)
-
-    # Zero diagonal
-    np.fill_diagonal(A,0)
-
-    # Make sure symmetric and non nul
-    A[A < 0] = 0
-    C = A + A.T
-
-    # Sort pixels by inverse degree
-    cent = -np.sum(A > threshold, axis=1).astype(np.float32)
-    sel = np.argsort(cent)[::-1] # desending order
-
-    return sel, cent
 
 def detect_box(bipartition, seed,  dims, initial_im_size=None, scales=None, principle_object=True):
     """
