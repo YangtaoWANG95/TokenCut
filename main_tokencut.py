@@ -102,7 +102,7 @@ if __name__ == "__main__":
         default=100,
         help="Number of patches with the lowest degree considered."
     )
-    parser.add_argument("--resize", type=int, default=480, help="Resize input image to fix size")
+    parser.add_argument("--resize", type=int, default=None, help="Resize input image to fix size")
     parser.add_argument("--tau", type=float, default=0.2, help="Tau for seperating the Graph.")
     parser.add_argument("--eps", type=float, default=1e-5, help="Eps for defining the Graph.")
     parser.add_argument("--no-binary-graph", action="store_true", default=False, help="Generate a binary graph where edge of the Graph will binary. Or using similarity score as edge weight.")

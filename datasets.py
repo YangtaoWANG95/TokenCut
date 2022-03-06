@@ -19,7 +19,7 @@ transform = pth_transforms.Compose(
 )
 
 class ImageDataset:
-    def __init__(self, image_path, resize=False):
+    def __init__(self, image_path, resize=None):
         
         self.image_path = image_path
         self.name = image_path.split("/")[-1]
@@ -30,7 +30,7 @@ class ImageDataset:
             img = img.convert("RGB")
 
         # Build a dataloader
-        if resize > 0:
+        if resize is not None:
             transform_resize = pth_transforms.Compose(
                 [ 
                     pth_transforms.ToTensor(),
