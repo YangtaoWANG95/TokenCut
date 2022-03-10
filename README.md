@@ -43,6 +43,16 @@ If our project is helpful for your research, please consider citing :
 
 ## 1. Updates
 
+***03/10/2022***
+Creating a 480p Demo using [Gradio](https://github.com/gradio-app/gradio). Try out the Web Demo: [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/yangtaowang/TokenCut)
+
+Internet image results:
+<p >
+  <img width="20%" alt="TokenCut visualizations" src="examples/internet_image/kungfu_pred.jpg">
+  <img width="20%" alt="TokenCut visualizations" src="examples/internet_image/kungfu_attn.jpg">
+  <img width="19%" alt="TokenCut visualizations" src="examples/internet_image/pokemon_pred.jpg">
+  <img width="19.5%" alt="TokenCut visualizations" src="examples/internet_image/pokemon_attn.jpg">
+</p>
 
 ***02/26/2022***
 Integrated into [Huggingface Spaces 🤗](https://huggingface.co/spaces) using [Gradio](https://github.com/gradio-app/gradio). Try out the Web Demo: [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/akhaliq/TokenCut)
