@@ -4,7 +4,7 @@ Pytorch implementation of **Tokencut**:
 
 **Self-supervised Transformers for Unsupervised Object Discovery using Normalized Cut**
 
-*[Yangtao Wang](https://yangtaowang95.github.io), [Xi Shen](https://xishen0220.github.io/), [Shell Xu Hu](http://hushell.github.io/), [Yuan Yuan](https://yyuanad.github.io/), [James Crowley](http://crowley-coutaz.fr/jlc/jlc.html), [Dominique Vaufreydaz](https://research.vaufreydaz.org/)*
+*[Yangtao Wang](https://yangtaowang95.github.io), [Xi Shen](https://xishen0220.github.io/), [Shell Xu Hu](http://hushell.github.io/), [Yuan Yuan](https://yyuanad.github.io/), [James L. Crowley](http://crowley-coutaz.fr/jlc/jlc.html), [Dominique Vaufreydaz](https://research.vaufreydaz.org/)*
 
 
 [[Project page](https://www.m-psi.fr/Papers/TokenCut2022/)]
