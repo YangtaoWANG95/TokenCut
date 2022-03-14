@@ -20,7 +20,7 @@ If our project is helpful for your research, please consider citing :
 ``` 
 @inproceedings{wang2022tokencut,
           title={Self-supervised Transformers for Unsupervised Object Discovery using Normalized Cut},
-          author={Wang, Yangtao and Shen, Xi and Hu, Shell Xu and Yuan, Yuan and Crowley, James and Vaufreydaz, Dominique},
+          author={Wang, Yangtao and Shen, Xi and Hu, Shell Xu and Yuan, Yuan and Crowley, James L. and Vaufreydaz, Dominique},
           booktitle={Conference on Computer Vision and Pattern Recognition}
           year={2022}
         }
