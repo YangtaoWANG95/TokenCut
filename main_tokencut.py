@@ -1,3 +1,6 @@
+"""
+Main experiment file. Code adapted from LOST: https://github.com/valeoai/LOST
+"""
 import os
 import argparse
 import random

@@ -1,3 +1,6 @@
+"""
+Vis utilities. Code adapted from LOST: https://github.com/valeoai/LOST
+"""
 import cv2
 import numpy as np
 from PIL import Image

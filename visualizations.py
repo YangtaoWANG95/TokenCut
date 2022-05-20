@@ -1,3 +1,6 @@
+"""
+Vis utilities. Code adapted from LOST: https://github.com/valeoai/LOST
+"""
 import cv2
 import torch
 import skimage.io

@@ -1,3 +1,7 @@
+"""
+Main functions for applying Normalized Cut.
+Code adapted from LOST: https://github.com/valeoai/LOST
+"""
 import torch
 import torch.nn.functional as F
 import numpy as np
