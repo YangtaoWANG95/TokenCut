@@ -294,10 +294,10 @@ class ViTFeat(nn.Module):
     def __init__(self, pretrained_pth, feat_dim, vit_arch = 'base', vit_feat = 'k', patch_size=16):
         super().__init__()
         if vit_arch == 'base' :
-            self.model = vit_base(num_classes=0)
+            self.model = vit_base(patch_size=patch_size, num_classes=0)
 
         else :
-            self.model = vit_small(num_classes=0)
+            self.model = vit_small(patch_size=patch_size, num_classes=0)
 
         self.feat_dim = feat_dim
         self.vit_feat = vit_feat
