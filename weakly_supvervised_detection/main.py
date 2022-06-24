@@ -311,7 +311,7 @@ if __name__ == '__main__':
     parser.add_argument('--avgpool_patchtokens', default=False, type=utils.bool_flag,
         help="""Whether ot not to concatenate the global average pooled features to the [CLS] token.
         We typically set this to False for ViT-Small and to True with ViT-Base.""")
-    parser.add_argument('--arch', default='vit_small', choice=['vit_small', 'vit_base'], type=str, help='Architecture')
+    parser.add_argument('--arch', default='vit_small', choices=['vit_small', 'vit_base'], type=str, help='Architecture')
     parser.add_argument('--dataset', default='cub', type=str, choices=['cub', 'imagenet'], help='Architecture')
     parser.add_argument('--patch_size', default=16, type=int, help='Patch resolution of the model.')
     parser.add_argument('--input_size', default=224, type=int, help='Input image size, default(224).')
