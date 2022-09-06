@@ -8,6 +8,7 @@ Pytorch implementation of **Tokencut**:
 
 
 [[Project page](https://www.m-psi.fr/Papers/TokenCut2022/)]
+[[ Github (Video Segmentation) ](https://github.com/YangtaoWANG95/TokenCut_video)]
 [[Paper](https://arxiv.org/pdf/2202.11539.pdf)]
 [![Colab demo](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YangtaoWANG95/TokenCut/blob/master/inference_demo.ipynb)
 [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/akhaliq/TokenCut)
@@ -42,6 +43,9 @@ If our project is helpful for your research, please consider citing :
 * [5. Acknowledgement](#5-acknowledgement)
 
 ## 1. Updates
+
+***09/06/2022***
+Extension work of [TokeCut Video Segmentation](https://github.com/YangtaoWANG95/TokenCut_video) is realised! 
 
 ***03/10/2022***
 Creating a 480p Demo using [Gradio](https://github.com/gradio-app/gradio). Try out the Web Demo: [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/yangtaowang/TokenCut)
