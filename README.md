@@ -11,7 +11,7 @@ Pytorch implementation of **Tokencut**:
 [[ Github (Video Segmentation) ](https://github.com/YangtaoWANG95/TokenCut_video)]
 [[Paper](https://arxiv.org/pdf/2202.11539.pdf)]
 [![Colab demo](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YangtaoWANG95/TokenCut/blob/master/inference_demo.ipynb)
-[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/akhaliq/TokenCut)
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/yangtaowang/TokenCut)
 
 <p align="center">
   <img width="100%" alt="TokenCut teaser" src="examples/overview.png">
